@@ -6,5 +6,10 @@ pipeline {
         echo 'qdb'
       }
     }
+    stage('dfg') {
+      steps {
+        echo 'vbc'
+      }
+    }
   }
 }
