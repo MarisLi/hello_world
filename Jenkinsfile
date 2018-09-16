@@ -1,14 +1,15 @@
 pipeline {
-  agent none
-  stages {
-    stage('asd') {
-      steps {
-        echo 'qdb'
-      }
+  agent {
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
-    stage('dfg') {
+
+  }
+  stages {
+    stage('Build') {
       steps {
-        echo 'vbc'
+        sh 'npm install'
       }
     }
   }
